@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konverter Notasi Infix</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Konverter Notasi Infix ke notasi Prefix dan Postfix</h1>
+      </div>
+
+      <div class="nav-tabs">
+        <button class="nav-tab active" onclick="switchTab('postfix')">
+          Infix → Postfix
+        </button>
+        <button class="nav-tab" onclick="switchTab('prefix')">
+          Infix → Prefix
+        </button>
+      </div>
+
+      <div id="postfix-tab" class="tab-content active">
+        <div class="converter-section">
+          <div class="input-section">
+            <label for="postfixInput">Masukkan Ekspresi Infix:</label>
+            <input
+              type="text"
+              id="postfixInput"
+              placeholder="Contoh: a + b * c - d"
+              value=""
+            />
+          </div>
+          <button class="convert-btn" onclick="convertToPostfix()">
+            Konversi ke Postfix
+          </button>
+        </div>
+
+        <div class="result-section">
+          <div class="result-header">Hasil Postfix:</div>
+          <div class="result-display" id="postfixResult">
+            Masukkan ekspresi dan klik konversi
+          </div>
+        </div>
+
+        <div class="steps-section hidden" id="postfixSteps">
+          <div class="steps-header">Langkah-langkah Konversi:</div>
+          <div class="steps-container" id="postfixStepsContainer"></div>
+        </div>
+
+        <div class="error-message hidden" id="postfixError"></div>
+      </div>
+
+      <div id="prefix-tab" class="tab-content">
+        <div class="converter-section">
+          <div class="input-section">
+            <label for="prefixInput">Masukkan Ekspresi Infix:</label>
+            <input
+              type="text"
+              id="prefixInput"
+              placeholder="Contoh: a + b * c - d"
+              value=""
+            />
+          </div>
+          <button class="convert-btn" onclick="convertToPrefix()">
+            Konversi ke Prefix
+          </button>
+        </div>
+
+        <div class="result-section">
+          <div class="result-header">Hasil Prefix:</div>
+          <div class="result-display" id="prefixResult">
+            Masukkan ekspresi dan klik konversi
+          </div>
+        </div>
+
+        <div class="steps-section hidden" id="prefixSteps">
+          <div class="steps-header">Langkah-langkah Konversi:</div>
+          <div class="steps-container" id="prefixStepsContainer"></div>
+        </div>
+
+        <div class="error-message hidden" id="prefixError"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
